@@ -1,0 +1,101 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-bottom: 300px;
+}
+
+section {
+    min-height: 80vh;
+    padding: 50px;
+    border-bottom: 2px dashed #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== BÀI 1 ===== */
+.container-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.box-red { background: #e74c3c; }
+.box-green { background: #2ecc71; }
+.box-blue { background: #3498db; }
+.box-orange { background: #e67e22; }
+
+/* ===== BÀI 3 ===== */
+.gsap-box {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+/* ===== BÀI 4 ===== */
+#bai4 {
+    background: #f4f4f4;
+}
+
+.header-anim {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.hero-cta {
+    padding: 12px 30px;
+    background: #e74c3c;
+    color: white;
+    border: none;              /* ✅ SỬA LỖI */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ===== BÀI 5 (SỬA CHÍNH Ở ĐÂY) ===== */
+.card-list {
+    display: flex;             /* ✅ Xếp ngang */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;           /* Responsive */
+    margin-top: 30px;
+}
+
+.card {
+    width: 150px;
+    height: 200px;
+    background: #8e44ad;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+}
+#bai5 {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;        /* Phủ kín */
+    background-position: center;   /* Canh giữa */
+    background-repeat: no-repeat;
+    color: white;
+}
+body {
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed; /* Hiệu ứng parallax nhẹ */
+}
+

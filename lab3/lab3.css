@@ -1,0 +1,60 @@
+:root {
+    --primary: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --bg-light: #f8fafc;
+    --bg-dark: #0f172a;
+    --text-light: #1e293b;
+    --text-dark: #f1f5f9;
+}
+
+body {
+    margin: 0; font-family: 'Inter', sans-serif;
+    background-color: var(--bg-light); color: var(--text-light);
+    transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Bài 1: Dark Mode */
+body.dark { background-color: var(--bg-dark); color: var(--text-dark); }
+
+section { padding: 100px 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+body.dark section { border-bottom: 1px solid #1e293b; }
+
+/* Bài 2: Menu Highlight */
+nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 1000; }
+body.dark nav { background: rgba(15, 23, 42, 0.8); }
+nav ul { display: flex; justify-content: center; list-style: none; padding: 15px; margin: 0; }
+nav a { text-decoration: none; color: inherit; font-weight: 600; margin: 0 15px; transition: 0.3s; }
+nav a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+/* Nút bấm nâng cao */
+.btn-advance {
+    padding: 12px 32px; background: var(--primary); color: white; border: none;
+    border-radius: 12px; cursor: pointer; font-size: 16px; font-weight: bold;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.5); transition: 0.3s;
+}
+.btn-advance:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4); }
+
+/* Bài 3: Box nâng cao */
+.container-grid { display: flex; gap: 20px; justify-content: center; margin-top: 40px; }
+.box {
+    width: 200px; padding: 40px 20px; background: white; border: 1px solid #e2e8f0;
+    border-radius: 16px; font-weight: bold; color: var(--primary);
+    opacity: 0; transform: translateY(40px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+body.dark .box { background: #1e293b; border-color: #334155; }
+.box.show { opacity: 1; transform: translateY(0) scale(1); }
+
+/* Bài 4: Jump Animation */
+.animate { animation: softJump 0.5s ease; }
+@keyframes softJump {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+/* Bài 5: Circle nâng cao */
+.circle {
+    position: fixed; width: 20px; height: 20px; background: var(--primary);
+    border-radius: 50%; pointer-events: none; z-index: 9999;
+    mix-blend-mode: difference; /* Hiệu ứng đổi màu khi đi qua văn bản */
+}
