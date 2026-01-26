@@ -1,0 +1,463 @@
+html, body {
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* ===== HEADER ===== */
+  .header {
+    position: sticky;
+    top: 0;
+    background: #111;
+    color: #fff;
+    z-index: 1000;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+  }
+  
+  .nav a {
+    color: #fff;
+    text-decoration: none;
+    padding-bottom: 5px;
+  }
+  
+  .nav a.active {
+    border-bottom: 2px solid rgb(251, 0, 255);
+  }
+  
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 26px;
+  }
+  
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  
+  /* Background */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, #00ffcc, #0066ff);
+    animation: bgMove 6s infinite alternate;
+    z-index: 1;
+  }
+  
+  @keyframes bgMove {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+  }
+  
+  /* Overlay */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    animation: overlayFade 1.5s ease forwards;
+    z-index: 2;
+  }
+  
+  @keyframes overlayFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Content */
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    animation: contentUp 1.2s ease forwards;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  @keyframes contentUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  /* ===== BUTTON ===== */
+  .btn {
+    padding: 10px 20px;
+    background: cyan;
+    border: none;
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    box-shadow: 0 0 20px cyan;
+  }
+  
+  /* ===== SERVICES / PORTFOLIO ===== */
+  .services,
+  .portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+  }
+  
+  .card {
+    padding: 40px;
+    background: #eee;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Flip Card */
+  .flip-card {
+    perspective: 1000px;
+  }
+  
+  .flip-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .front,
+  .back {
+    padding: 50px;
+    backface-visibility: hidden;
+  }
+  
+  .back {
+    transform: rotateY(180deg);
+    background: #00ffcc;
+  }
+  
+  /* ===== CONTACT ===== */
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 40px;
+  }
+  
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 15px;
+    background: #111;
+    color: #fff;
+  }
+  
+  /* ===== MOBILE ===== */
+  @media (max-width: 768px) {
+    .nav ul {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      flex-direction: column;
+      background: #222;
+      width: 200px;
+      transform: translateX(100%);
+      transition: 0.3s;
+    }
+  
+    .nav ul.show {
+      transform: translateX(0);
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  /* CONTACT – CLEAN VERSION */
+.contact {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  
+  .contact h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-desc {
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: cyan;
+    box-shadow: 0 0 8px rgba(0,255,255,0.4);
+  }
+  
+  .contact-form .btn {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  /* THANK YOU MESSAGE */
+.thank-you {
+    margin-top: 20px;
+    color: #00c896;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.5s ease;
+    display: none;
+  }
+  
+  /* SHOW STATE */
+  .thank-you.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* BUTTON NÂNG CAO HƠN */
+  .btn {
+    background: linear-gradient(135deg, #00ffd5, #00bfff);
+    color: #000;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,255,255,0.6);
+  }
+  main {
+    flex: 1;
+  }
+  .project-1 {
+    background: red;
+  }
+  .project-2 {
+    background: red;
+  }
+  .project-3 {
+    background: red;
+  }
+      /* CONTACT HERO BACKGROUND */
+.contact-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* LỚP NỀN */
+  .contact-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, #6a11cb, #2575fc);
+    animation: contactBgMove 6s infinite alternate;
+    z-index: 1;
+  }
+  
+  @keyframes contactBgMove {
+    from { transform: scale(1); }
+    to { transform: scale(1.15); }
+  }
+  
+  /* LỚP PHỦ */
+  .contact-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 2;
+  }
+  
+  /* HỘP FORM */
+  .contact-box {
+    position: relative;
+    z-index: 3;
+    background: #fff;
+    padding: 50px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    text-align: center;
+    animation: fadeUp 1.2s ease;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .thank-you {
+    margin-top: 15px;
+    color: #00c9a7;
+    display: none;
+    font-weight: bold;
+  }
+     /* ===== PORTFOLIO BACKGROUND (NO IMAGE) ===== */
+.page {
+    min-height: 100vh;
+  }
+  
+  .portfolio {
+    min-height: 100vh;
+    padding: 80px 40px;
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-size: 300% 300%;
+    animation: bgMove 10s infinite alternate;
+  }
+  
+  @keyframes bgMove {
+    from { background-position: 0% 50%; }
+    to   { background-position: 100% 50%; }
+  }
+  .front.card {
+    height: 220px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff, #eaeaea);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+  
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  .project-1 {
+    background: linear-gradient(135deg, #00ffcc, #00bfff);
+  }
+  
+  .project-2 {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  }
+  
+  .project-3 {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  }
+  .flip-card {
+    perspective: 1200px;
+  }
+  
+  .flip-inner {
+    transition: transform 0.7s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .front,
+  .back {
+    backface-visibility: hidden;
+  }
+  
+  .back.card {
+    background: #111;
+    color: #fff;
+    transform: rotateY(180deg);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-size: 18px;
+    border-radius: 16px;
+  }
+        
